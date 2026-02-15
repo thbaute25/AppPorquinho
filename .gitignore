@@ -4,8 +4,23 @@ __pycache__/
 .streamlit/*
 !.streamlit/config.toml
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 venv/
 .venv/
 *.egg-info/
 dist/
 build/
+
+# Next.js
+.next/
+out/
+node_modules/
+
+# Vercel
+.vercel
+
+# Debug
+npm-debug.log*
