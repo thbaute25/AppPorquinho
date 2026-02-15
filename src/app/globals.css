@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #FF6B8A;
+  --primary-dark: #E8527A;
+  --primary-light: #FFB3C6;
+  --secondary: #6C5CE7;
+  --success: #00B894;
+  --danger: #FF6B6B;
+  --text: #1A1A2E;
+  --text-light: #6B7280;
+}
+
+* {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background: #FAFAFA;
+  color: var(--text);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-light);
+  border-radius: 10px;
+}
+
+/* Metric Cards */
+.metric-card {
+  border-radius: 20px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: none;
+}
+.metric-card:hover {
+  transform: translateY(-3px);
+}
+.metric-card.receita {
+  background: linear-gradient(135deg, #00B894 0%, #00CEC9 100%);
+  box-shadow: 0 8px 25px rgba(0,184,148,0.25);
+}
+.metric-card.gasto {
+  background: linear-gradient(135deg, #FF6B6B 0%, #EE5A24 100%);
+  box-shadow: 0 8px 25px rgba(255,107,107,0.25);
+}
+.metric-card.saldo {
+  background: linear-gradient(135deg, #6C5CE7 0%, #A29BFE 100%);
+  box-shadow: 0 8px 25px rgba(108,92,231,0.25);
+}
+.metric-card .metric-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 0.5rem;
+}
+.metric-card .metric-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: white;
+}
+.metric-card .metric-delta {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.8);
+  margin-top: 0.3rem;
+}
+
+/* Transaction Row */
+.tx-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.2rem;
+  background: white;
+  border-radius: 14px;
+  margin-bottom: 0.6rem;
+  border: 1px solid #F0F0F5;
+  transition: all 0.2s ease;
+}
+.tx-row:hover {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  transform: translateX(4px);
+}
+
+/* Investment Badge */
+.invest-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.invest-badge.up {
+  background: rgba(0,184,148,0.12);
+  color: #00B894;
+}
+.invest-badge.down {
+  background: rgba(255,107,107,0.12);
+  color: #FF6B6B;
+}
+
+/* Sidebar */
+.sidebar {
+  background: linear-gradient(180deg, #1A1A2E 0%, #16213E 50%, #0F3460 100%);
+  color: white;
+  min-height: 100vh;
+}
+.sidebar .nav-info {
+  background: rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+}
+.sidebar .nav-info-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 0.3rem;
+}
+.sidebar .nav-info-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+}
+
+/* Tab active state */
+.tab-active {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255,107,138,0.3);
+}
+
+/* Login container */
+.login-container {
+  background: white;
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 20px 60px rgba(255,107,138,0.12), 0 4px 20px rgba(0,0,0,0.06);
+  border: 1px solid rgba(255,107,138,0.1);
+  text-align: center;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* Progress bar */
+.progress-bar {
+  background: #F0F0F5;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 10px;
+}
+.progress-bar-fill {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 10px;
+  height: 100%;
+  transition: width 0.5s ease;
+}
+
+/* Form styling */
+.form-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  border: 1px solid #F0F0F5;
+}
+
+/* Button primary */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(255,107,138,0.3);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+.btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(255,107,138,0.4);
+  transform: translateY(-2px);
+}
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Input styling */
+.input-field {
+  border-radius: 12px;
+  border: 2px solid #E8E8F0;
+  padding: 0.7rem 1rem;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  outline: none;
+}
+.input-field:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(255,107,138,0.15);
+}
+
+.select-field {
+  border-radius: 12px;
+  border: 2px solid #E8E8F0;
+  padding: 0.7rem 1rem;
+  font-size: 0.95rem;
+  width: 100%;
+  outline: none;
+  background: white;
+  cursor: pointer;
+}
+.select-field:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(255,107,138,0.15);
+}
